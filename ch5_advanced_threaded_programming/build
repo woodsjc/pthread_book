@@ -1,0 +1,9 @@
+#!/bin/bash
+
+gcc -o once once.c -pthread
+
+gcc -o mutex_attr mutex_attr.c -pthread
+
+gcc -o cond_attr cond_attr.c -pthread
+
+gcc -o thread_attr thread_attr.c -pthread
