@@ -1,9 +1,10 @@
 #!/bin/bash
 
-gcc -o once once.c -pthread
+for filename in ./*.c; do
+	if [ -f "$filename" ]; then
+		file=${filename##*/}
+		file=${file%%.c}
+		gcc -o "$file" "$file.c" -pthread
+	fi
+done
 
-gcc -o mutex_attr mutex_attr.c -pthread
-
-gcc -o cond_attr cond_attr.c -pthread
-
-gcc -o thread_attr thread_attr.c -pthread
